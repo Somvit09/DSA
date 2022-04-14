@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 int binarysearch(int arr[], int n, int key){
-	int s = 0;
-	int e = n;
-	int temp = -1;
+	int s = 0;//starting index
+	int e = n;//end index
+	int temp = -1;//for founding the element
 	while(s<=e){
 		int mid = (s+e) / 2;
 		if (arr[mid] == key){

@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 int linearsearch(int arr[], int n, int key){
-	int temp = -1;
+	int temp = -1;//for founding the element
 	for(int i=0; i<n; i++){
 		if(arr[i]==key){
 			cout<<"element found at index "<<i<<endl;
