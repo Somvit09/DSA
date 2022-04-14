@@ -3,10 +3,12 @@ using namespace std;
 int binarysearch(int arr[], int n, int key){
 	int s = 0;
 	int e = n;
+	int temp = -1;
 	while(s<=e){
 		int mid = (s+e) / 2;
 		if (arr[mid] == key){
-			return mid;
+			temp = mid;
+			break;
 		}
 		else if(arr[mid] > key){
 			e = mid - 1;
@@ -14,6 +16,12 @@ int binarysearch(int arr[], int n, int key){
 		else{
 			s = mid + 1;
 		}
+	}
+	if(temp == -1){
+		cout<<"value not found"<<endl;
+	}
+	else{
+		cout<<"element found at index "<<temp<<endl;
 	}
 	return 0;
 }
