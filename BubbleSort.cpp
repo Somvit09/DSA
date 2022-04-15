@@ -1,5 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
+void BubbleSort(int n,int arr[]){
+	for(int i = 0; i<n; i++){
+		for(int j=0; j<n-i-1; j++){
+			if(arr[j] > arr[j+1]){
+				int temp = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = temp;
+			}
+			for(int i=0; i<n; i++){
+				cout<<arr[i]<<" ";
+			}
+			cout<<"\n"<<endl;
+		}
+	}
+	return ;
+}
+
 int main(){
 	int n;
 	cout<<"arrey length"<<endl;
@@ -13,18 +30,8 @@ int main(){
 	for(int i=0; i<n; i++){
 		cout<<arr[i]<<" ";
 	}
-
-	
 	cout<<"\nSorting ....."<<endl;
-	for(int i=1; i<n; i++){
-		int curr = arr[i];
-		int j = i-1;
-		while(j>=0 && arr[j] > curr){
-			arr[j+1] = arr[j];
-			j--;
-		}
-		arr[j+1] = curr;
-	}
+	BubbleSort(n, arr);
 	cout<<"\ndone."<<endl;
 	cout<<"\nprinting final sorted arrey... "<<endl;
 	for(int i=0; i<n; i++){
