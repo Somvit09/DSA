@@ -11,12 +11,6 @@ int peekelement(int arr[], int n){
 	if(n == 1){
 		return 0;
 	}
-	if(arr[0] >= arr[1]){
-		return 0;
-	}
-	if(arr[n-1] >= arr[n-2]){
-		return n-1;
-	}
 	for(int i = 1; i<n-1 ; i++){
 		if(arr[i] >= arr[i-1] && arr[i] >= arr[i+1]){
 			return i;
@@ -24,21 +18,10 @@ int peekelement(int arr[], int n){
 	}
 }
 int main(){
-	int n, arr[n];
-	cout<<"enter array size"<<endl;
-	cin>>n;
-	for(int i = 0; i<n; i++){
-		arr[i] = 0;
-	}
-	cout<<"enter array values"<<endl;
-	for(int i = 0; i<n; i++){
-		cin>>arr[i];
-	}
-	cout<<"array is: ";
-	for(int i = 0; i<n; i++){
-		cout<<arr[i]<<",";
-	}
-	cout<<"peek element will be of this array is: "<<peekelement(arr, n);
+	int arr[] = { 1000, 11, 445, 1, 330, 3000, 564646 };
+	int n = sizeof(arr)/sizeof(arr[0]);
+	cout<<peekelement(arr, n)<<endl;
+	
 	return 0;
 }
 
