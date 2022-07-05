@@ -15,7 +15,21 @@ int kadane(int arr[], int n)
  
     //max_ending_here =  it stores the sum of the i'th variable
     int max_ending_here = 0;
- 
+    int max_ = -500;
+    int temp[n]; //initializing an empty array
+    for(int i=0; i<n; i++){// checking if the array only contains negative number .only that case we return the maximum variable of the list
+        if(arr[i] < 0){
+            temp[i] = arr[i];   
+        }
+    }
+    if(temp == arr){ // checking the two arrays are equal or not. Note this condition needs to be checked
+        for(int i = 0; i<n; i++){
+            if(max_ < arr[i]){
+                max_ = arr[i];// getting the maximum value from the array and return that
+            }
+        }
+        return max_;
+    }
     // traverse the given array
     for (int i = 0; i < n; i++)
     {
